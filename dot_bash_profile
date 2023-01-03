@@ -1,0 +1,26 @@
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+    . ~/.bashrc
+fi
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
+alias dcu='docker compose up -d'
+alias dcd='docker compose down'
+
+
+export NVM_DIR="/Users/matt/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export PATH="/usr/local/sbin:$PATH"
+export PATH=/usr/local/php5/bin:$PATH
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#test -f ~/.git-completion.bash && . $_
+
+#https://stackoverflow.com/questions/12399002/how-to-configure-git-bash-command-line-completion
+if [ -f /usr/local/share/bash-completion/bash_completion ]; then
+    . /usr/local/share/bash-completion/bash_completion
+fi
+
+#https://github.com/lyze/posh-git-sh
+#. ~/git-prompt.sh
+#PROMPT_COMMAND='__posh_git_ps1 "\u@\h:\w " "\\\$ ";'$PROMPT_COMMAND
+complete -C /usr/local/bin/terraform terraform
