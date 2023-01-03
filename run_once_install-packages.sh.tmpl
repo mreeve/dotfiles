@@ -1,0 +1,60 @@
+{{ if eq .chezmoi.os "darwin" -}}   
+    #!/bin/zsh
+
+    # Update Brew
+    brew update
+
+    # Install Git: Source Control - https://git-scm.com/
+    brew install git
+
+    # Manage Multiple Node.js Versions
+    brew install nvm
+
+    # Python Version Management
+    brew install pyenv
+
+    # JetBrains Mono Font: Open Source Font
+    brew tap homebrew/cask-fonts && brew install --cask font-jetbrains-mono
+
+    # Tmux: Terminal Multiplexer - https://tmux.github.io/
+    brew install tmux
+
+    # Visual Studio Code: Code Editor - https://code.visualstudio.com/
+    brew install --cask visual-studio-code
+
+    # iTerm2: Terminal Replacement - https://iterm2.com/
+    brew install --cask iterm2
+
+    # 1Password: Password Manager - https://1password.com/
+    brew install --cask 1password
+
+    # Discord: Online Community Collaboration - https://discord.com/
+    brew install --cask discord
+
+    # Jump Desktop Connect (Client for remot access)
+    brew install --cask jump-desktop-connect
+
+    # Amethyst: Window Manager - https://ianyh.com/amethyst/
+    brew install --cask amethyst
+
+    # Restart terminal
+    exec zsh -l
+
+    {{ if eq .location "work" -}}
+
+        # PhpStorm: Code Editor - License/Subscription Required - https://www.jetbrains.com/phpstorm/
+        brew install --cask phpstorm
+        
+        # Sequel Ace: Database Management - https://sequel-ace.com/
+        ## Uncomment PhpStorm is unavailable
+        # brew install --cask sequel-ace
+
+        # Slack: Team Collaboration - https://slack.com/
+        brew install --cask slack
+
+        # Clickup: Task Management - https://clickup.com/
+        brew install --cask clickup
+
+    {{ end -}}
+
+{{ end -}}
