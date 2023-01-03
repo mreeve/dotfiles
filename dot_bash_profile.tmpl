@@ -8,7 +8,7 @@ alias dcu='docker compose up -d'
 alias dcd='docker compose down'
 
 
-export NVM_DIR="/Users/matt/.nvm"
+export NVM_DIR="{{ .chezmoi.homeDir }}/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 export PATH="/usr/local/sbin:$PATH"
 export PATH=/usr/local/php5/bin:$PATH
